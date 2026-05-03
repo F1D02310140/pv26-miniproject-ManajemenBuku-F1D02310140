@@ -1,0 +1,150 @@
+/* ===== GLOBAL ===== */
+QWidget {
+    background-color: #0b1220;
+    color: #e5e7eb;
+    font-family: Segoe UI;
+    font-size: 13px;
+}
+
+/* ===== TITLE ===== */
+#title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+#info {
+    color: #9ca3af;
+}
+
+/* ===== STAT CARD ===== */
+#statCard {
+    background-color: #111827;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+}
+
+#statCard:hover {
+    border: 1px solid #3b82f6;
+}
+
+#statLabel {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+#statValue {
+    font-size: 30px;
+    font-weight: bold;
+    color: #f9fafb;
+}
+
+/* ===== BUTTON ===== */
+QPushButton {
+    background-color: #1f2937;
+    border-radius: 8px;
+    padding: 6px 10px;
+}
+
+QPushButton:hover {
+    background-color: #374151;
+}
+
+QPushButton#primary {
+    background-color: #3b82f6;
+    color: white;
+}
+
+QPushButton#primary:hover {
+    background-color: #2563eb;
+}
+
+/* ===== TABLE ===== */
+QTableWidget {
+    background-color: #111827;
+    border-radius: 12px;
+    gridline-color: #1f2937;
+    selection-background-color: #2563eb;
+    selection-color: white;
+}
+
+QHeaderView::section {
+    background-color: #020617;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    color: #9ca3af;
+}
+
+/* ===== TABLE ROW ===== */
+QTableWidget::item {
+    padding: 6px;
+}
+
+QTableWidget::item:selected {
+    background-color: #2563eb;
+}
+
+/* ===== SCROLL ===== */
+QScrollBar:vertical {
+    background: #111827;
+    width: 8px;
+}
+
+QScrollBar::handle:vertical {
+    background: #374151;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #4b5563;
+}
+
+/* ===== BUTTON TABLE ===== */
+QPushButton#btnEdit {
+    background-color: #1f2937;
+    color: #93c5fd;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+QPushButton#btnEdit:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+QPushButton#btnDelete {
+    background-color: #1f2937;
+    color: #fca5a5;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+QPushButton#btnDelete:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* BUTTON TABLE */
+QPushButton#btnEdit {
+    background-color: #1f2937;
+    color: #93c5fd;
+    border-radius: 6px;
+}
+
+QPushButton#btnEdit:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+QPushButton#btnDelete {
+    background-color: #1f2937;
+    color: #fca5a5;
+    border-radius: 6px;
+}
+
+QPushButton#btnDelete:hover {
+    background-color: #dc2626;
+    color: white;
+}
