@@ -20,7 +20,6 @@ class MainWindow(QMainWindow):
     def init_ui(self):
         main = QVBoxLayout()
 
-        # ===== MENU BAR =====
         menubar = self.menuBar()
         menu_help = menubar.addMenu("Tentang")
 
@@ -28,14 +27,12 @@ class MainWindow(QMainWindow):
         about_action.triggered.connect(self.show_about)
         menu_help.addAction(about_action)
 
-        # ===== HEADER =====
         title = QLabel("📊 Smart Book Dashboard")
         title.setObjectName("title")
 
         info = QLabel("Nama: SYAZWANI | NIM: F1D02310140")
         info.setObjectName("info")
 
-        # ===== STATS =====
         self.stat_total = QLabel("0")
         self.stat_done = QLabel("0")
         self.stat_reading = QLabel("0")
@@ -47,13 +44,11 @@ class MainWindow(QMainWindow):
         stat_layout.addWidget(self.create_stat("Selesai", self.stat_done, "#22c55e"), 0, 1)
         stat_layout.addWidget(self.create_stat("Sedang Dibaca", self.stat_reading, "#facc15"), 0, 2)
 
-        # ===== SEARCH =====
         self.search = QLineEdit()
         self.search.setPlaceholderText("🔍 Cari judul atau penulis...")
         self.search.setClearButtonEnabled(True)
         self.search.textChanged.connect(self.load_data)
 
-        # ===== TABLE =====
         self.table = QTableWidget()
         self.table.setColumnCount(7)
         self.table.setHorizontalHeaderLabels(
@@ -68,12 +63,10 @@ class MainWindow(QMainWindow):
 
         self.table.setColumnWidth(6, 200)
 
-        # ===== BUTTON =====
         btn_add = QPushButton("➕ Tambah Buku")
         btn_add.setObjectName("primary")
         btn_add.clicked.connect(self.add_book)
 
-        # ===== LAYOUT =====
         main.addWidget(title)
         main.addWidget(info)
         main.addSpacing(10)
@@ -113,7 +106,7 @@ class MainWindow(QMainWindow):
         return container
 
     def load_data(self):
-        # 🔥 RESET TOTAL TABLE (INI KUNCI FIX BUG)
+        # RESET TOTAL TABLE (INI KUNCI FIX BUG)
         self.table.clearContents()
         self.table.setRowCount(0)
 
@@ -129,7 +122,6 @@ class MainWindow(QMainWindow):
                 if keyword in d[1].lower() or keyword in d[2].lower():
                     data.append(d)
 
-        # ===== STATS =====
         total = len(data)
         done = len([d for d in data if d[4] == "Selesai"])
         reading = len([d for d in data if d[4] == "Sedang Dibaca"])
@@ -138,7 +130,6 @@ class MainWindow(QMainWindow):
         self.stat_done.setText(str(done))
         self.stat_reading.setText(str(reading))
 
-        # ===== EMPTY STATE =====
         if not data:
             self.table.setRowCount(1)
 
@@ -168,7 +159,6 @@ class MainWindow(QMainWindow):
 
                 self.table.setItem(r, c, item)
 
-            # ===== BUTTON =====
             btn_widget = QWidget()
 
             btn_layout = QHBoxLayout()
